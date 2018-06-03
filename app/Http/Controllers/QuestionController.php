@@ -52,7 +52,7 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-        // auth()->user()->questions()->whereId($question->id)->update($request->all());
+        // auth()->user()->questions()->where('questions.id', $question->id)->update($request->all());
         $question->update($request->all());
         return response('Updated', Response::HTTP_ACCEPTED);
     }
